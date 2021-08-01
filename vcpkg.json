@@ -1,0 +1,9 @@
+{
+  "name": "vklite",
+  "version-string": "0.1.0",
+  "dependencies": [
+    "fmt",
+    "sfml",
+    "glfw3"
+  ]
+}
