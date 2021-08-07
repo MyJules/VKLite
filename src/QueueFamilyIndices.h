@@ -3,8 +3,7 @@
 #include <cstdint>
 #include <optional>
 
-struct QueueFamilyIndices
-{
+struct QueueFamilyIndices {
   std::optional<uint32_t> graphicFamily;
   std::optional<uint32_t> presentFamily;
 

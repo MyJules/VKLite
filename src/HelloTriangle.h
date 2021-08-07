@@ -1,15 +1,13 @@
 #pragma once
 
+#include "FileReader.h"
 #include "QueueFamilyIndices.h"
 #include "SwapChainSupportDetails.h"
-#include "FileReader.h"
 
 #define GLFW_INCLUDE_VULKAN
 #include <GLFW/glfw3.h>
-#include <optional>
 
-class HelloTriangle
-{
+class HelloTriangle {
 public:
   void run();
 
@@ -26,8 +24,10 @@ private:
   bool checkDeviceExtensionSupport(VkPhysicalDevice device);
   QueueFamilyIndices findQueueFamilies(VkPhysicalDevice device);
   SwapChainSupportDetails querySwapChainSupport(VkPhysicalDevice device);
-  VkSurfaceFormatKHR chooseSwapSurfaceFormat(const std::vector<VkSurfaceFormatKHR> &availableFormats);
-  VkPresentModeKHR chooseSwapPresentMode(const std::vector<VkPresentModeKHR> &availablePresentModes);
+  VkSurfaceFormatKHR chooseSwapSurfaceFormat(
+      const std::vector<VkSurfaceFormatKHR> &availableFormats);
+  VkPresentModeKHR chooseSwapPresentMode(
+      const std::vector<VkPresentModeKHR> &availablePresentModes);
   VkExtent2D chooseSwapExtern(const VkSurfaceCapabilitiesKHR &capabilities);
   void createSwapChain();
   void createImageView();
@@ -39,6 +39,9 @@ private:
   void createCommandBuffer();
   void drawFrame();
   void createSyncObjects();
+  void recreateSwapChain();
+  void cleanupSwapChain();
+  static void framebufferResizeCallback(GLFWwindow* window, int width, int height);
 
 private:
   GLFWwindow *m_window;
@@ -63,4 +66,6 @@ private:
   std::vector<VkSemaphore> m_renderFinishedSemaphore;
   std::vector<VkFence> m_inFlightFences;
   std::vector<VkFence> m_imagesInFlight;
+  size_t currentFrame = 0;
+  bool famebufferResized = false;
 };

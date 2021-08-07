@@ -1,19 +1,15 @@
 #include "HelloTriangle.h"
 
+#include <cstdlib>
 #include <iostream>
 #include <stdexcept>
-#include <cstdlib>
 
-int main()
-{
+int main() {
   HelloTriangle app;
 
-  try
-  {
+  try {
     app.run();
-  }
-  catch (const std::exception &e)
-  {
+  } catch (const std::exception &e) {
     std::cerr << e.what() << std::endl;
     return EXIT_FAILURE;
   }
