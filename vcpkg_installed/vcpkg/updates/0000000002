@@ -1,7 +1,0 @@
-Package: vcpkg-cmake
-Version: 2021-07-26
-Architecture: x64-linux
-Multi-Arch: same
-Abi: 46cd2ad44a78ac7c1f5d3b3d930c0244fd62934e77067e9c937c0abc1bde723f
-Type: Port
-Status: install ok half-installed

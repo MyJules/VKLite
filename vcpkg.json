@@ -4,6 +4,7 @@
   "dependencies": [
     "fmt",
     "sfml",
-    "glfw3"
+    "glfw3",
+    "glm"
   ]
 }

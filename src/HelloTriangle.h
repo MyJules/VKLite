@@ -42,6 +42,8 @@ private:
   void recreateSwapChain();
   void cleanupSwapChain();
   static void framebufferResizeCallback(GLFWwindow* window, int width, int height);
+  void createVertexBuffer();
+  uint32_t findMemoryType(uint32_t typeFilter, VkMemoryPropertyFlags properties);
 
 private:
   GLFWwindow *m_window;
@@ -68,4 +70,6 @@ private:
   std::vector<VkFence> m_imagesInFlight;
   size_t currentFrame = 0;
   bool famebufferResized = false;
+  VkBuffer m_vertexBuffer;
+  VkDeviceMemory m_vertexBufferMemory;
 };

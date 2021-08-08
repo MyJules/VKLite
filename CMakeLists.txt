@@ -14,16 +14,19 @@ set(CMAKE_CXX_STANDARD 20)
 find_package(Vulkan REQUIRED)
 find_package(fmt REQUIRED)
 find_package(glfw3 REQUIRED)
+find_package(glm CONFIG REQUIRED)
 
 add_executable(VKlite src/main.cpp
 src/HelloTriangle.cpp src/HelloTriangle.h
 src/QueueFamilyIndices.h src/QueueFamilyIndices.cpp
 src/SwapChainSupportDetails.cpp src/SwapChainSupportDetails.h
-src/FileReader.h src/FileReader.cpp)
+src/FileReader.h src/FileReader.cpp
+src/Vertex.h src/Vertex.cpp)
 
 target_link_libraries(VKlite PRIVATE Vulkan::Vulkan)
 target_link_libraries(VKlite PRIVATE fmt::fmt)
 target_link_libraries(VKlite PRIVATE glfw)
+target_link_libraries(VKlite PRIVATE glm::glm)
 
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})
 set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
